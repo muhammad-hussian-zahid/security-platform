@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+# Prowler JSON output contains sensitive data
+module1-governance/*.json
+module1-governance/*.ocsf.json
+=======
+module1-governance/*.ocsf.json
+module1-governance/*.json
+>>>>>>> 743e52933159698c86d1a486aa3c8cc1f0c0841d
