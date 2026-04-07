@@ -1,0 +1,25 @@
+policies:
+  - name: s3-public-buckets
+    resource: s3
+    description: "Find all S3 buckets with public access enabled"
+    filters:
+      - type: global-grants
+        allow_website: true
+
+  - name: security-groups-open-ssh
+    resource: security-group
+    description: "Find security groups allowing SSH from anywhere"
+    filters:
+      - type: ingress
+        IpProtocol: tcp
+        FromPort: 22
+        ToPort: 22
+        Cidr: "0.0.0.0/0"
+
+  - name: iam-users-no-mfa
+    resource: iam-user
+    description: "Find IAM users without MFA enabled"
+    filters:
+      - type: mfa-device
+        value: 0
+        op: eq

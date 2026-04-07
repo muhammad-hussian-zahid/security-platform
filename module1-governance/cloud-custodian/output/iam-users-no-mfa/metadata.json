@@ -1,0 +1,73 @@
+{
+  "policy": {
+    "name": "iam-users-no-mfa",
+    "resource": "iam-user",
+    "description": "Find IAM users without MFA enabled",
+    "filters": [
+      {
+        "type": "mfa-device",
+        "value": 0,
+        "op": "eq",
+        "key": "MFADevices"
+      }
+    ]
+  },
+  "version": "0.9.50",
+  "execution": {
+    "id": "d6664874-4032-4333-a247-df7c93a28b3e",
+    "start": 1775581112.1001132,
+    "end_time": 1775581113.1688645,
+    "duration": 1.068751335144043
+  },
+  "config": {
+    "region": "eu-north-1",
+    "regions": [
+      "eu-north-1"
+    ],
+    "cache": "~/.cache/cloud-custodian.cache",
+    "profile": null,
+    "account_id": "334960985321",
+    "assume_role": null,
+    "session_policy": null,
+    "external_id": null,
+    "log_group": null,
+    "tracer": null,
+    "metrics_enabled": null,
+    "metrics": null,
+    "output_dir": "module1-governance/cloud-custodian/output",
+    "cache_period": 15,
+    "dryrun": false,
+    "authorization_file": null,
+    "subparser": "run",
+    "config": null,
+    "configs": [
+      "module1-governance/cloud-custodian/policies.yml"
+    ],
+    "policy_filters": [],
+    "resource_types": [],
+    "verbose": null,
+    "quiet": null,
+    "debug": false,
+    "skip_validation": false,
+    "command": "c7n.commands.run",
+    "vars": null
+  },
+  "sys-stats": {},
+  "api-stats": {
+    "iam.ListMFADevices": 2
+  },
+  "metrics": [
+    {
+      "MetricName": "ResourceCount",
+      "Timestamp": "2026-04-07T16:58:33.168692",
+      "Value": 0,
+      "Unit": "Count"
+    },
+    {
+      "MetricName": "ResourceTime",
+      "Timestamp": "2026-04-07T16:58:33.168700",
+      "Value": 1.0681681632995605,
+      "Unit": "Seconds"
+    }
+  ]
+}
