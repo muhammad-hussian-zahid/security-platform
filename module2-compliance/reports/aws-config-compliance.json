@@ -1,0 +1,30 @@
+{
+    "ComplianceByConfigRules": [
+        {
+            "ConfigRuleName": "cloudtrail-enabled",
+            "Compliance": {
+                "ComplianceType": "NON_COMPLIANT",
+                "ComplianceContributorCount": {
+                    "CappedCount": 1,
+                    "CapExceeded": false
+                }
+            }
+        },
+        {
+            "ConfigRuleName": "encrypted-volumes",
+            "Compliance": {
+                "ComplianceType": "INSUFFICIENT_DATA"
+            }
+        },
+        {
+            "ConfigRuleName": "iam-password-policy",
+            "Compliance": {
+                "ComplianceType": "NON_COMPLIANT",
+                "ComplianceContributorCount": {
+                    "CappedCount": 1,
+                    "CapExceeded": false
+                }
+            }
+        }
+    ]
+}
