@@ -1,0 +1,34 @@
+# ================================================
+# Sentinel Policy: S3 Security Controls
+# Author: Hussain
+# Standard: GDPR Article 32, CIS AWS 2.1.5
+# Purpose: Block insecure S3 before deployment
+# ================================================
+
+# Read directly from global tfplan variable
+resource_changes = tfplan.resource_changes
+
+# Filter only S3 buckets being created/updated
+s3_buckets = filter resource_changes as _, rc {
+    rc.type is "aws_s3_bucket" and
+    rc.mode is "managed"
+}
+
+# RULE 1: No public-read ACL
+no_public_read = rule {
+    all s3_buckets as _, bucket {
+        bucket.change.after.acl is not "public-read"
+    }
+}
+
+# RULE 2: No public-read-write ACL
+no_public_read_write = rule {
+    all s3_buckets as _, bucket {
+        bucket.change.after.acl is not "public-read-write"
+    }
+}
+
+# MAIN
+main = rule {
+    no_public_read and no_public_read_write
+}

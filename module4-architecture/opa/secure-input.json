@@ -1,0 +1,50 @@
+{
+  "resource": {
+    "aws_s3_bucket": {
+      "secure_bucket": {
+        "bucket": "my-secure-bucket-334960985321",
+        "server_side_encryption_configuration": {
+          "rule": {
+            "apply_server_side_encryption_by_default": {
+              "sse_algorithm": "AES256"
+            }
+          }
+        },
+        "versioning": [{ "enabled": true }]
+      }
+    },
+    "aws_security_group": {
+      "secure_sg": {
+        "name": "secure-security-group",
+        "ingress": [
+          {
+            "from_port": 22,
+            "to_port": 22,
+            "protocol": "tcp",
+            "cidr_blocks": ["10.0.0.0/8"]
+          },
+          {
+            "from_port": 443,
+            "to_port": 443,
+            "protocol": "tcp",
+            "cidr_blocks": ["0.0.0.0/0"]
+          }
+        ]
+      }
+    },
+    "aws_ebs_volume": {
+      "secure_volume": {
+        "availability_zone": "eu-north-1a",
+        "size": 20,
+        "encrypted": true
+      }
+    },
+    "aws_db_instance": {
+      "secure_db": {
+        "identifier": "secure-database",
+        "engine": "mysql",
+        "storage_encrypted": true
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "resource_changes": [
+    {
+      "type": "aws_s3_bucket",
+      "mode": "managed",
+      "name": "secure_bucket",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "bucket": "my-secure-bucket",
+          "acl": "private"
+        }
+      }
+    },
+    {
+      "type": "aws_ebs_volume",
+      "mode": "managed",
+      "name": "secure_volume",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "encrypted": true,
+          "size": 20
+        }
+      }
+    },
+    {
+      "type": "aws_db_instance",
+      "mode": "managed",
+      "name": "secure_db",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "storage_encrypted": true,
+          "engine": "mysql"
+        }
+      }
+    },
+    {
+      "type": "aws_security_group",
+      "mode": "managed",
+      "name": "secure_sg",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "name": "secure-sg",
+          "ingress": [
+            {
+              "from_port": 22,
+              "to_port": 22,
+              "protocol": "tcp",
+              "cidr_blocks": ["10.0.0.0/8"],
+              "ipv6_cidr_blocks": []
+            },
+            {
+              "from_port": 443,
+              "to_port": 443,
+              "protocol": "tcp",
+              "cidr_blocks": ["0.0.0.0/0"],
+              "ipv6_cidr_blocks": []
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+	"records": [
+		{
+			"key": "network-security",
+			"source": "./policies/network-security.sentinel",
+			"sourceSum": "",
+			"dest": "/workspaces/security-platform/module4-architecture/sentinel/policies/network-security.sentinel"
+		},
+		{
+			"key": "s3-security",
+			"source": "./policies/s3-security.sentinel",
+			"sourceSum": "",
+			"dest": "/workspaces/security-platform/module4-architecture/sentinel/policies/s3-security.sentinel"
+		},
+		{
+			"key": "encryption",
+			"source": "./policies/encryption.sentinel",
+			"sourceSum": "",
+			"dest": "/workspaces/security-platform/module4-architecture/sentinel/policies/encryption.sentinel"
+		}
+	]
+}

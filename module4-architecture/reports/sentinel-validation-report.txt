@@ -1,0 +1,127 @@
+=== Sentinel Policy Validation Report ===
+Date: Wed Apr  8 15:55:34 UTC 2026
+
+=== INSECURE INFRASTRUCTURE RESULTS ===
+
+--- S3 Security Check ---
+Execution trace. The information below will show the values of all
+the rules evaluated. Note that some rules may be missing if
+short-circuit logic was taken.
+
+Note that for collection types and long strings, output may be
+truncated; re-run "sentinel apply" with the -json flag to see the
+full contents of these values.
+
+The trace is displayed due to a failed policy.
+
+Fail - s3-security.sentinel
+
+Description:
+  ================================================
+  Sentinel Policy: S3 Security Controls
+  Author: Hussain
+  Standard: GDPR Article 32, CIS AWS 2.1.5
+  Purpose: Block insecure S3 before deployment
+  ================================================
+
+s3-security.sentinel:32:1 - Rule "main"
+  Description:
+    MAIN
+
+  Value:
+    false
+
+s3-security.sentinel:18:1 - Rule "no_public_read"
+  Description:
+    RULE 1: No public-read ACL
+
+  Value:
+    false
+
+
+--- Encryption Check ---
+Execution trace. The information below will show the values of all
+the rules evaluated. Note that some rules may be missing if
+short-circuit logic was taken.
+
+Note that for collection types and long strings, output may be
+truncated; re-run "sentinel apply" with the -json flag to see the
+full contents of these values.
+
+The trace is displayed due to a failed policy.
+
+Fail - encryption.sentinel
+
+Description:
+  ================================================
+  Sentinel Policy: Encryption Requirements
+  Author: Hussain
+  Standard: GDPR Article 32, PCI-DSS Req 3
+  Purpose: Enforce encryption on all storage
+  ================================================
+
+encryption.sentinel:37:1 - Rule "main"
+  Description:
+    MAIN
+
+  Value:
+    false
+
+encryption.sentinel:23:1 - Rule "ebs_encrypted"
+  Description:
+    RULE 1: EBS must be encrypted
+
+  Value:
+    false
+
+
+--- Network Security Check ---
+Execution trace. The information below will show the values of all
+the rules evaluated. Note that some rules may be missing if
+short-circuit logic was taken.
+
+Note that for collection types and long strings, output may be
+truncated; re-run "sentinel apply" with the -json flag to see the
+full contents of these values.
+
+The trace is displayed due to a failed policy.
+
+Fail - network-security.sentinel
+
+Description:
+  ================================================
+  Sentinel Policy: Network Security Controls
+  Author: Hussain
+  Standard: CIS AWS 4.1/4.2, PCI-DSS Req 1
+  Purpose: Block open security groups
+  ================================================
+
+network-security.sentinel:43:1 - Rule "main"
+  Description:
+    MAIN
+
+  Value:
+    false
+
+network-security.sentinel:17:1 - Rule "no_open_ssh"
+  Description:
+    RULE 1: No open SSH to world
+
+  Value:
+    false
+
+
+=== SECURE INFRASTRUCTURE RESULTS ===
+
+--- S3 Security Check ---
+Pass - s3-security.sentinel
+
+--- Encryption Check ---
+Pass - encryption.sentinel
+
+--- Network Security Check ---
+Pass - network-security.sentinel
+
+=== SUMMARY ===
+Insecure infrastructure: 3 policies FAILED — deployment blocked
+Secure infrastructure: 3 policies PASSED — approved for deployment

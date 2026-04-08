@@ -1,0 +1,46 @@
+{
+  "resource": {
+    "aws_s3_bucket": {
+      "insecure_bucket": {
+        "bucket": "my-insecure-bucket-334960985321",
+        "acl": "public-read"
+      },
+      "no_versioning_bucket": {
+        "bucket": "my-no-versioning-bucket-334960985321"
+      }
+    },
+    "aws_security_group": {
+      "insecure_sg": {
+        "name": "insecure-security-group",
+        "ingress": [
+          {
+            "from_port": 22,
+            "to_port": 22,
+            "protocol": "tcp",
+            "cidr_blocks": ["0.0.0.0/0"]
+          },
+          {
+            "from_port": 3389,
+            "to_port": 3389,
+            "protocol": "tcp",
+            "cidr_blocks": ["0.0.0.0/0"]
+          }
+        ]
+      }
+    },
+    "aws_ebs_volume": {
+      "insecure_volume": {
+        "availability_zone": "eu-north-1a",
+        "size": 20,
+        "encrypted": false
+      }
+    },
+    "aws_db_instance": {
+      "insecure_db": {
+        "identifier": "insecure-database",
+        "engine": "mysql",
+        "storage_encrypted": false
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+# ================================================
+# Sentinel Policy: Encryption Requirements
+# Author: Hussain
+# Standard: GDPR Article 32, PCI-DSS Req 3
+# Purpose: Enforce encryption on all storage
+# ================================================
+
+resource_changes = tfplan.resource_changes
+
+# Filter EBS volumes
+ebs_volumes = filter resource_changes as _, rc {
+    rc.type is "aws_ebs_volume" and
+    rc.mode is "managed"
+}
+
+# Filter RDS instances
+rds_instances = filter resource_changes as _, rc {
+    rc.type is "aws_db_instance" and
+    rc.mode is "managed"
+}
+
+# RULE 1: EBS must be encrypted
+ebs_encrypted = rule {
+    all ebs_volumes as _, vol {
+        vol.change.after.encrypted is true
+    }
+}
+
+# RULE 2: RDS must be encrypted
+rds_encrypted = rule {
+    all rds_instances as _, db {
+        db.change.after.storage_encrypted is true
+    }
+}
+
+# MAIN
+main = rule {
+    ebs_encrypted and rds_encrypted
+}

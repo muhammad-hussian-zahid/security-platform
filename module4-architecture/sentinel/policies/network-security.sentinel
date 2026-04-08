@@ -1,0 +1,45 @@
+# ================================================
+# Sentinel Policy: Network Security Controls
+# Author: Hussain
+# Standard: CIS AWS 4.1/4.2, PCI-DSS Req 1
+# Purpose: Block open security groups
+# ================================================
+
+resource_changes = tfplan.resource_changes
+
+# Filter security groups
+security_groups = filter resource_changes as _, rc {
+    rc.type is "aws_security_group" and
+    rc.mode is "managed"
+}
+
+# RULE 1: No open SSH to world
+no_open_ssh = rule {
+    all security_groups as _, sg {
+        all sg.change.after.ingress as _, ingress_rule {
+            all ingress_rule.cidr_blocks as _, cidr {
+                ingress_rule.from_port > 22 or
+                ingress_rule.to_port < 22 or
+                cidr is not "0.0.0.0/0"
+            }
+        }
+    }
+}
+
+# RULE 2: No open RDP to world
+no_open_rdp = rule {
+    all security_groups as _, sg {
+        all sg.change.after.ingress as _, ingress_rule {
+            all ingress_rule.cidr_blocks as _, cidr {
+                ingress_rule.from_port > 3389 or
+                ingress_rule.to_port < 3389 or
+                cidr is not "0.0.0.0/0"
+            }
+        }
+    }
+}
+
+# MAIN
+main = rule {
+    no_open_ssh and no_open_rdp
+}
