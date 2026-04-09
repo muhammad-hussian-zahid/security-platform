@@ -124,12 +124,12 @@ SOLUTION: One integrated platform — automated scanning → compliance → risk
 
 | # | Module | Status | Tools | Key Output |
 |---|--------|--------|-------|------------|
-| 1 | [Cloud Governance](./module1-cloud-governance/README.md) | ✅ Complete | Prowler, ScoutSuite, Cloud Custodian | Security findings across AWS + Azure |
-| 2 | [Automated Compliance](./module2-automated-compliance/README.md) | ✅ Complete | AWS Config, Azure Policy, Cloud Custodian | GDPR / ISO27001 / PCI-DSS reports |
-| 3 | [Risk Management](./module3-risk-management/README.md) | ✅ Complete | Python, FAIR Model, pandas | FAIR risk scores + BIA financials |
-| 4 | [Architecture Validation](./module4-architecture-validation/README.md) | ✅ Complete | OPA, Terraform Sentinel, Terraform, Ansible | Policy enforcement + hardened EC2 |
-| 5 | [IAM Governance](./module5-iam-governance/README.md) | ✅ Complete | AWS CLI, Azure CLI, Python scripts | Privilege escalation detection + IAM report |
-| 6 | [Executive Dashboard](./module6-executive-dashboard/README.md) | ✅ Complete | HTML/CSS/JS | Unified security dashboard |
+| 1 | [Cloud Governance](module1-cloud-governance/README.md) | ✅ Complete | Prowler, ScoutSuite, Cloud Custodian | Security findings across AWS + Azure |
+| 2 | [Automated Compliance](module2-automated-compliance/README.md) | ✅ Complete | AWS Config, Azure Policy, Cloud Custodian | GDPR / ISO27001 / PCI-DSS reports |
+| 3 | [Risk Management](module3-risk-management/README.md) | ✅ Complete | Python, FAIR Model, pandas | FAIR risk scores + BIA financials |
+| 4 | [Architecture Validation](module4-architecture-validation/README.md) | ✅ Complete | OPA, Terraform Sentinel, Terraform, Ansible | Policy enforcement + hardened EC2 |
+| 5 | [IAM Governance](module5-iam-governance/README.md) | ✅ Complete | AWS CLI, Azure CLI, Python scripts | Privilege escalation detection + IAM report |
+| 6 | [Executive Dashboard](module6-executive-dashboard/README.md) | ✅ Complete | HTML/CSS/JS | Unified security dashboard |
 
 ---
 
@@ -306,12 +306,12 @@ security-platform/
 
 | Module | README Link |
 |--------|------------|
-| Module 1 — Cloud Governance | [module1-cloud-governance/README.md](./module1-cloud-governance/README.md) |
-| Module 2 — Automated Compliance | [module2-automated-compliance/README.md](./module2-automated-compliance/README.md) |
-| Module 3 — Risk Management | [module3-risk-management/README.md](./module3-risk-management/README.md) |
-| Module 4 — Architecture Validation | [module4-architecture-validation/README.md](./module4-architecture-validation/README.md) |
-| Module 5 — IAM Governance | [module5-iam-governance/README.md](./module5-iam-governance/README.md) |
-| Module 6 — Executive Dashboard | [module6-executive-dashboard/README.md](./module6-executive-dashboard/README.md) |
+| Module 1 — Cloud Governance | [module1-cloud-governance/README.md](module1-cloud-governance/README.md) |
+| Module 2 — Automated Compliance | [module2-automated-compliance/README.md](module2-automated-compliance/README.md) |
+| Module 3 — Risk Management | [module3-risk-management/README.md](module3-risk-management/README.md) |
+| Module 4 — Architecture Validation | [module4-architecture-validation/README.md](module4-architecture-validation/README.md) |
+| Module 5 — IAM Governance | [module5-iam-governance/README.md](module5-iam-governance/README.md) |
+| Module 6 — Executive Dashboard | [module6-executive-dashboard/README.md](module6-executive-dashboard/README.md) |
 
 ---
 
