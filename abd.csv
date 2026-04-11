@@ -1,3 +1,10 @@
 ACCOUNTID,REGION,Service,Finding,STATUS,Risk Score,Risk Level,Treatment,FAIR_ALE_USD
 334960985321.0,eu-north-1,S3,Protection using S3,FAIL,17100.0,Critical,Fix Immediately,4080000.0
 334960985321.0,eu-north-1,EC2,Enable and set up AWS Inspector.,FAIL,19000.0,Critical,Fix Immediately,2550000.0
+334960985321.0,eu-north-1,aws,Data-at-rest is protected.,FAIL,2500.0,Low,Accept,20000.0
+334960985321.0,eu-north-1,aws,Remote access is managed.,FAIL,2500.0,Low,Accept,20000.0
+334960985321.0,eu-north-1,aws,Impact of events is determined.,FAIL,2500.0,Low,Accept,20000.0
+334960985321.0,eu-north-1,aws,Malicious code is detected.,FAIL,2500.0,Low,Accept,20000.0
+334960985321.0,eu-north-1,aws,Unauthorized mobile code is detected.,FAIL,2500.0,Low,Accept,20000.0
+334960985321.0,eu-north-1,aws,Event detection information is communicated.,FAIL,2500.0,Low,Accept,20000.0
+334960985321.0,eu-north-1,aws,Protections against data leaks are implemented.,FAIL,2500.0,Low,Accept,20000.0
