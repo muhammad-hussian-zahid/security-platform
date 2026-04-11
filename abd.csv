@@ -1,0 +1,3 @@
+ACCOUNTID,REGION,Service,Finding,STATUS,Risk Score,Risk Level,Treatment,FAIR_ALE_USD
+334960985321.0,eu-north-1,S3,Protection using S3,FAIL,17100.0,Critical,Fix Immediately,4080000.0
+334960985321.0,eu-north-1,EC2,Enable and set up AWS Inspector.,FAIL,19000.0,Critical,Fix Immediately,2550000.0
