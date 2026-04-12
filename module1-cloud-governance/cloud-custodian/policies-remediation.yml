@@ -1,0 +1,38 @@
+policies:
+
+  - name: s3-public-buckets-remediate
+    resource: s3
+    description: Find AND remediate S3 buckets with public access enabled
+    filters:
+      - type: global-grants
+        allow_website: true
+    actions:
+      - type: set-public-block
+        BlockPublicAcls: true
+        IgnorePublicAcls: true
+        BlockPublicPolicy: true
+        RestrictPublicBuckets: true
+
+  - name: security-groups-open-ssh-remediate
+    resource: security-group
+    description: Find AND remove SSH open to 0.0.0.0/0
+    filters:
+      - type: ingress
+        IpProtocol: tcp
+        FromPort: 22
+        ToPort: 22
+        Cidr: 0.0.0.0/0
+    actions:
+      - type: remove-permissions
+        ingress: matched
+
+  - name: iam-users-no-mfa-remediate
+    resource: iam-user
+    description: Find IAM users without MFA and disable their access keys
+    filters:
+      - type: mfa-device
+        value: 0
+        op: eq
+    actions:
+      - type: remove-keys
+        disable: true

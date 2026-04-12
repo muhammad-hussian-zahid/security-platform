@@ -1,24 +1,30 @@
 {
   "policy": {
-    "name": "security-groups-open-ssh",
-    "resource": "security-group",
-    "description": "Find security groups allowing SSH from anywhere",
+    "name": "s3-public-buckets-remediate",
+    "resource": "s3",
+    "description": "Find AND remediate S3 buckets with public access enabled",
     "filters": [
       {
-        "type": "ingress",
-        "IpProtocol": "tcp",
-        "FromPort": 22,
-        "ToPort": 22,
-        "Cidr": "0.0.0.0/0"
+        "type": "global-grants",
+        "allow_website": true
+      }
+    ],
+    "actions": [
+      {
+        "type": "set-public-block",
+        "BlockPublicAcls": true,
+        "IgnorePublicAcls": true,
+        "BlockPublicPolicy": true,
+        "RestrictPublicBuckets": true
       }
     ]
   },
   "version": "0.9.50",
   "execution": {
-    "id": "6c42b3cd-371b-49a4-8c44-91b00e9f18ce",
-    "start": 1776012653.5997543,
-    "end_time": 1776012654.7676835,
-    "duration": 1.1679291725158691
+    "id": "9649880c-1f9f-4372-a3d9-9b390921e734",
+    "start": 1776013131.911904,
+    "end_time": 1776013131.9211557,
+    "duration": 0.009251594543457031
   },
   "config": {
     "region": "eu-north-1",
@@ -35,14 +41,14 @@
     "tracer": null,
     "metrics_enabled": null,
     "metrics": null,
-    "output_dir": "module1-cloud-governance/cloud-custodian/output",
+    "output_dir": "module1-cloud-governance/cloud-custodian/remediation-output",
     "cache_period": 15,
-    "dryrun": false,
+    "dryrun": true,
     "authorization_file": null,
     "subparser": "run",
     "config": null,
     "configs": [
-      "module1-cloud-governance/cloud-custodian/policies.yml"
+      "module1-cloud-governance/cloud-custodian/policies-remediation.yml"
     ],
     "policy_filters": [],
     "resource_types": [],
@@ -54,26 +60,18 @@
     "vars": null
   },
   "sys-stats": {},
-  "api-stats": {
-    "ec2.DescribeSecurityGroups": 1
-  },
+  "api-stats": {},
   "metrics": [
     {
       "MetricName": "ResourceCount",
-      "Timestamp": "2026-04-12T16:50:54.766327",
-      "Value": 8,
+      "Timestamp": "2026-04-12T16:58:51.921009",
+      "Value": 0,
       "Unit": "Count"
     },
     {
       "MetricName": "ResourceTime",
-      "Timestamp": "2026-04-12T16:50:54.766336",
-      "Value": 1.1658999919891357,
-      "Unit": "Seconds"
-    },
-    {
-      "MetricName": "ActionTime",
-      "Timestamp": "2026-04-12T16:50:54.767673",
-      "Value": 2.6226043701171875e-06,
+      "Timestamp": "2026-04-12T16:58:51.921017",
+      "Value": 0.0011675357818603516,
       "Unit": "Seconds"
     }
   ]

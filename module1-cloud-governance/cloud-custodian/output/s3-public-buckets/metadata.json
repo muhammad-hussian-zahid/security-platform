@@ -12,10 +12,10 @@
   },
   "version": "0.9.50",
   "execution": {
-    "id": "66dcac0c-572e-4801-8c4d-7b9dc507c503",
-    "start": 1775581112.0884402,
-    "end_time": 1775581112.0972507,
-    "duration": 0.00881052017211914
+    "id": "07fa35c2-3e8b-407a-9695-b84739470b3e",
+    "start": 1776012650.4818182,
+    "end_time": 1776012653.5992641,
+    "duration": 3.117445945739746
   },
   "config": {
     "region": "eu-north-1",
@@ -32,14 +32,14 @@
     "tracer": null,
     "metrics_enabled": null,
     "metrics": null,
-    "output_dir": "module1-governance/cloud-custodian/output",
+    "output_dir": "module1-cloud-governance/cloud-custodian/output",
     "cache_period": 15,
     "dryrun": false,
     "authorization_file": null,
     "subparser": "run",
     "config": null,
     "configs": [
-      "module1-governance/cloud-custodian/policies.yml"
+      "module1-cloud-governance/cloud-custodian/policies.yml"
     ],
     "policy_filters": [],
     "resource_types": [],
@@ -51,18 +51,30 @@
     "vars": null
   },
   "sys-stats": {},
-  "api-stats": {},
+  "api-stats": {
+    "s3.ListBuckets": 1,
+    "s3.GetBucketLocation": 1,
+    "s3.GetBucketTagging": 1,
+    "s3.GetBucketPolicy": 1,
+    "s3.GetBucketAcl": 1,
+    "s3.GetBucketReplication": 1,
+    "s3.GetBucketVersioning": 1,
+    "s3.GetBucketWebsite": 1,
+    "s3.GetBucketLogging": 1,
+    "s3.GetBucketNotificationConfiguration": 1,
+    "s3.GetBucketLifecycleConfiguration": 1
+  },
   "metrics": [
     {
       "MetricName": "ResourceCount",
-      "Timestamp": "2026-04-07T16:58:32.097065",
+      "Timestamp": "2026-04-12T16:50:53.599009",
       "Value": 0,
       "Unit": "Count"
     },
     {
       "MetricName": "ResourceTime",
-      "Timestamp": "2026-04-07T16:58:32.097075",
-      "Value": 0.0006775856018066406,
+      "Timestamp": "2026-04-12T16:50:53.599022",
+      "Value": 3.109638214111328,
       "Unit": "Seconds"
     }
   ]

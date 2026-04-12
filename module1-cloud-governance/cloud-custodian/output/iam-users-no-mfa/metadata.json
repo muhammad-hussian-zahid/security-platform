@@ -14,10 +14,10 @@
   },
   "version": "0.9.50",
   "execution": {
-    "id": "d6664874-4032-4333-a247-df7c93a28b3e",
-    "start": 1775581112.1001132,
-    "end_time": 1775581113.1688645,
-    "duration": 1.068751335144043
+    "id": "21178d6b-6a85-4ce7-a0d5-8a2312fb352f",
+    "start": 1776012654.7684193,
+    "end_time": 1776012662.5907013,
+    "duration": 7.822282075881958
   },
   "config": {
     "region": "eu-north-1",
@@ -34,14 +34,14 @@
     "tracer": null,
     "metrics_enabled": null,
     "metrics": null,
-    "output_dir": "module1-governance/cloud-custodian/output",
+    "output_dir": "module1-cloud-governance/cloud-custodian/output",
     "cache_period": 15,
     "dryrun": false,
     "authorization_file": null,
     "subparser": "run",
     "config": null,
     "configs": [
-      "module1-governance/cloud-custodian/policies.yml"
+      "module1-cloud-governance/cloud-custodian/policies.yml"
     ],
     "policy_filters": [],
     "resource_types": [],
@@ -54,19 +54,21 @@
   },
   "sys-stats": {},
   "api-stats": {
-    "iam.ListMFADevices": 2
+    "iam.ListUsers": 1,
+    "iam.GetUser": 9,
+    "iam.ListMFADevices": 9
   },
   "metrics": [
     {
       "MetricName": "ResourceCount",
-      "Timestamp": "2026-04-07T16:58:33.168692",
+      "Timestamp": "2026-04-12T16:51:02.590440",
       "Value": 0,
       "Unit": "Count"
     },
     {
       "MetricName": "ResourceTime",
-      "Timestamp": "2026-04-07T16:58:33.168700",
-      "Value": 1.0681681632995605,
+      "Timestamp": "2026-04-12T16:51:02.590450",
+      "Value": 7.820714235305786,
       "Unit": "Seconds"
     }
   ]
