@@ -1,6 +1,10 @@
 [
   "BLOCKED: S3 bucket 'insecure_bucket' has public-read ACL. Violates GDPR Article 32 and CIS AWS 2.1.5"
 ]
+[]
+[
+  "BLOCKED: S3 bucket 'insecure_bucket' has public-read ACL. Violates GDPR Article 32 and CIS AWS 2.1.5"
+]
 [
   "BLOCKED: Security group 'insecure_sg' allows RDP (port 3389) from anywhere. Violates CIS AWS 4.2",
   "BLOCKED: Security group 'insecure_sg' allows SSH (port 22) from anywhere. Violates CIS AWS 4.1 and PCI-DSS Req 1"
