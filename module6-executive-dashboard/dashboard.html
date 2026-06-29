@@ -134,7 +134,7 @@ canvas{display:block;}
   <div class="sf">
     <p>
       Account: <span>334960985321</span><br>
-      Generated: <span>20 Jun 2026</span><br>
+      Generated: <span>29 Jun 2026</span><br>
       Checks: <span>12,608 total</span><br>
       Sources: <span>74 files</span>
     </p>
@@ -145,7 +145,7 @@ canvas{display:block;}
   <div class="ph">
     <div>
       <div class="pt">Enterprise Cloud Security — Executive Dashboard</div>
-      <div class="ps">Prowler · ScoutSuite · AWS Config · Azure Policy · OPA · Sentinel · Cloud Custodian · Custom IAM · Auto-generated 20 Jun 2026</div>
+      <div class="ps">Prowler · ScoutSuite · AWS Config · Azure Policy · OPA · Sentinel · Cloud Custodian · Custom IAM · Auto-generated 29 Jun 2026</div>
     </div>
     <div style="display:flex;gap:8px;align-items:center;">
       <span class="bdg b-red">&#9679; Critical Risk</span>
@@ -252,7 +252,7 @@ canvas{display:block;}
   <div class="card full">
     <div class="ct">Security posture trend — automated pipeline run history</div>
     <div style="position:relative;height:170px;"><canvas id="trendChart"></canvas></div>
-    <div class="src-tag" style="margin-top:8px;">Baseline — first automated run, no prior history yet. Re-running this pipeline on future scans will plot real change over time. Source: trend_history.json (appended automatically on each pipeline run).</div>
+    <div class="src-tag" style="margin-top:8px;">2 automated pipeline runs recorded. Source: trend_history.json (appended automatically on each pipeline run).</div>
   </div>
 
   <div class="g2">
@@ -381,10 +381,10 @@ new Chart(document.getElementById('ringChart'), {
 new Chart(document.getElementById('trendChart'), {
   type: 'line',
   data: {
-    labels: ["20 Jun 2026"],
+    labels: ["20 Jun 2026", "29 Jun 2026"],
     datasets: [
-      { label: 'Security Score', data: [37], borderColor: '#dc2626', backgroundColor: 'rgba(220,38,38,.08)', tension: 0.4, fill: true, pointBackgroundColor: '#dc2626', pointRadius: 5, borderWidth: 2.5 },
-      { label: 'Avg Compliance %', data: [40.0], borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,.06)', tension: 0.4, fill: true, pointBackgroundColor: '#d97706', pointRadius: 5, borderWidth: 2.5 }
+      { label: 'Security Score', data: [37, 37], borderColor: '#dc2626', backgroundColor: 'rgba(220,38,38,.08)', tension: 0.4, fill: true, pointBackgroundColor: '#dc2626', pointRadius: 5, borderWidth: 2.5 },
+      { label: 'Avg Compliance %', data: [40.0, 40.0], borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,.06)', tension: 0.4, fill: true, pointBackgroundColor: '#d97706', pointRadius: 5, borderWidth: 2.5 }
     ]
   },
   options: {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T03:37:32.948628+00:00",
+  "generated_at": "2026-06-29T16:10:21.461974+00:00",
   "generator": "generate_metrics.py",
   "sources_used": [
     "module1-cloud-governance/aws/prowler/compliance/prowler-output-334960985321-20260406192144_aws_account_security_onboarding_aws.csv",
@@ -259,6 +259,11 @@
   "trend_history": [
     {
       "date": "2026-06-20",
+      "security_score": 37,
+      "avg_compliance": 40.0
+    },
+    {
+      "date": "2026-06-29",
       "security_score": 37,
       "avg_compliance": 40.0
     }
