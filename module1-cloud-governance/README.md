@@ -337,32 +337,7 @@ policy:iam-users-no-mfa-remediate        count:0  (IAM is global, not region-sco
 | ScoutSuite | AWS | 351 total findings across 17 services | Visual service-level breakdown for stakeholders |
 | Prowler | Azure | Real Azure findings | Same compliance framework as AWS for consistency |
 | Cloud Custodian (detect) | AWS | Policy violations per custom rule | Policy-as-code detection |
-| Cloud Custodian (remediate) | AWS | **8 SSH security groups remediated** | Automated enforcement — CSPM objective met |
-
----
-
-## Security Incident — Git Push Protection
-
-During development, Prowler's JSON output accidentally contained AWS Access Key IDs. GitHub's Push Protection feature automatically detected the secret and **blocked the push**.
-
-### Resolution Steps
-
-```bash
-# Create a new branch with clean history
-git checkout --orphan clean-main
-
-# Add all files (JSON outputs are in .gitignore)
-git add .
-
-# Commit fresh with no secret history
-git commit -m 'Module 1: Cloud Governance - Prowler scan results'
-
-# Replace old main branch on GitHub with clean version
-git push --force origin clean-main:main
-```
-
-After resolving: credentials were rotated, and JSON output patterns were added to `.gitignore`.
-
+| Cloud Custodian (remediate) | AWS | **8 SSH security groups remediated** | Automated enforcement — CSPM objective 
 ---
 
 ## Key Terms
